@@ -9,6 +9,6 @@ use App\Http\Requests;
 class VideosController extends Controller
 {
     public function index(){
-        return Video::all();
+        return \App\Video::all();
     }
 }
