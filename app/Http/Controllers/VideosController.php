@@ -18,7 +18,7 @@ class VideosController extends Controller
             return "Please make sure name brand and published parameters are present";
         }
         if (\App\Video::create($params)){
-            return "New Video Created";
+            return "The New Video Created. Name: ".$request->name." Brand: ".$request->brand." Published: ".$request->published;
         };
     }
     
@@ -60,7 +60,11 @@ class VideosController extends Controller
             return "video_id and date parameters are required";
         }
         $viewCount = \App\View::where('video_id', $request->input('video_id'))->where('viewed_on', '>=', date($request->input('date')))->count();
-        return "Video number ".$request->input('video_id')." has ".$viewCount." views since ".$request->input('date');
+        $result = \App\Video::where('id', $request->input('video_id'))->first();
+        return "Video number ".$request->input('video_id')." has ".$viewCount." views since ".$request->input('date').
+        "</br>Name-> ".$result->name. 
+        "</br>Brand-> ".$result->brand. 
+        "</br>Published->".$result->published;
     }
     
 }
