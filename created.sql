@@ -1,0 +1,12 @@
+CREATE TABLE videos
+( id INT PRIMARY KEY,
+  name VARCHAR(50) NOT NULL,
+  brand VARCHAR(50)NOT NULL,
+  published DATE NOT NULL
+);
+
+CREATE TABLE views
+( id INT PRIMARY KEY,
+  video_id INT NOT NULL,
+  viewed_on VARCHAR(50)DATE NOT NULL
+);
