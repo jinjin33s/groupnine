@@ -12,4 +12,14 @@
 */
 
 
-Route::get('/', 'VideosController@index');
+Route::get('/videos', 'VideosController@index');
+
+Route::post('/videos/create', 'VideosController@create');
+
+Route::post('/videos/update', 'VideosController@update');
+
+Route::post('/videos/delete', 'VideosController@delete');
+
+Route::post('/videos/views', 'VideosController@views');
+
+Route::post('/videos/viewsReport', 'VideosController@viewsReport');

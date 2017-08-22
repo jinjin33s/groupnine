@@ -6,5 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Video extends Model
 {
-    // $fillable = ['name', 'brand', 'published'];
+    public $fillable = ['name', 'brand', 'published'];
+    public $timestamps = false;
 }
